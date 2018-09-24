@@ -8,14 +8,18 @@ import { Component } from '@angular/core';
 export class AppComponent {
   contact: any;
   contacts: any[] = [];
+
   constructor() {
     this.initContact();
+    this.initListOfContacts();
   }
+
   createContact() {
     console.log(`Create the following contact: ${JSON.stringify(this.contact)}`);
     this.contacts.push(this.contact);
     this.initContact();
   }
+
   private initContact() {
     this.contact = {
       name: '',
@@ -26,5 +30,40 @@ export class AppComponent {
       location: '',
       notes: ''
     };
+  }
+
+  private initListOfContacts() {
+    this.contacts = [
+      {
+        name: 'Raoul Diffouo',
+        email: 'diraulo@craftacademy.se',
+        company: 'Craft Academy',
+        role: 'Coach',
+        twitter: 'diraulo',
+        location: 'Pretoria',
+        notes: 'Can be annoying sometimes? :thinking:',
+        image: 'https://avatars2.githubusercontent.com/u/4028374?s=40&v=4'
+      },
+      {
+        name: 'Magnus',
+        email: 'magnus@craftacademy.se',
+        company: 'Craft Academy',
+        role: 'Coach',
+        twitter: 'magnus',
+        location: 'Gothenburg',
+        notes: 'Awesome Guy',
+        image: 'https://marketplace.canva.com/MABKNNGp23I/1/thumbnail_large/canva-rocky-mountain-with-beach-MABKNNGp23I.jpg'
+      },
+      {
+        name: 'Faraz',
+        email: 'faraz@craftacademy.se',
+        company: 'Craft Academy',
+        role: 'Coach',
+        twitter: 'faraz',
+        location: 'Stockholm',
+        notes: 'FooBar',
+        image: ''
+      }
+    ];
   }
 }
