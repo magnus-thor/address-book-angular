@@ -1,4 +1,5 @@
 import { AppPage } from './app.po';
+import { async } from 'rxjs/internal/scheduler/async';
 
 describe('workspace-project App', () => {
   let page: AppPage;
@@ -12,7 +13,7 @@ describe('workspace-project App', () => {
     expect(page.getParagraphText()).toEqual('Create contact');
   });
 
-  it('fill in the form', () => {
+  it('fill in the form', async () => {
     page.navigateTo();
     page.getField('name').sendKeys('John Doe');
     page.getField('email').sendKeys('john@craftacademy.se');
@@ -21,13 +22,16 @@ describe('workspace-project App', () => {
     page.getField('twitter').sendKeys('@tester');
     page.getField('location').sendKeys('Gothenburg');
     page.getField('notes').sendKeys('Some tester guy');
+    debugger;
     page.getSubmitButton().click();
-    // .then(function() {
-    //   const card = page.lastCard();
-    //   // console.log('HELLO HELLO', card);
-    //   expect(page.elementByTag(card, 'h1')).toEqual('John Doe');
-    // })
-    page.lC()
+      // .then((res) => {
+      //   debugger;
+      //   const card = page.lC();
+      //   // console.log('HELLO HELLO', card);
+      //   expect(page.elementByTag(card, 'h1')).toEqual('John Doe');
+      // })
+    let count = await page.lC();
+    expect(count).toBe(3);
 
   });
   
