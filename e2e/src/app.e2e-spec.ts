@@ -23,14 +23,15 @@ describe('workspace-project App', () => {
     page.getField('location').sendKeys('Gothenburg');
     page.getField('notes').sendKeys('Some tester guy');
     debugger;
-    page.getSubmitButton().click();
+    let button = page.getSubmitButton()
+    button.click();
       // .then((res) => {
       //   debugger;
       //   const card = page.lC();
       //   // console.log('HELLO HELLO', card);
       //   expect(page.elementByTag(card, 'h1')).toEqual('John Doe');
       // })
-    let count = await page.lC();
+    let count = page.lC();
     expect(count).toBe(3);
 
   });
