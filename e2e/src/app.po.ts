@@ -3,6 +3,7 @@ import { async } from 'rxjs/internal/scheduler/async';
 
 export class AppPage {
   navigateTo() {
+    browser.ignoreSynchronization = true;
     return browser.get('/');
   }
 
