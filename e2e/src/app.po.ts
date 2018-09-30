@@ -3,7 +3,7 @@ import { async } from 'rxjs/internal/scheduler/async';
 
 export class AppPage {
   navigateTo() {
-    browser.ignoreSynchronization = true;
+    // browser.ignoreSynchronization = true;
     return browser.get('/');
   }
 
@@ -19,24 +19,8 @@ export class AppPage {
     return element(by.buttonText('Submit'));
   }
 
-  // lastCard() {
-  //   // browser.sleep(10000000)
-  //   let cards = element.all(by.css('.card'));
-  //   // console.log('Cards: ', cards);
-  //   let lastCard = cards[cards.length -1];
-  //   return lastCard;
-  // }
-
-  lC() {
-    
+  cardCount() {
     return element.all(by.css('.card')).count();
-    // let cards = element.all(by.css('.card')).count().then((value) => {
-    //   return value;
-    // }, (reason) => {
-    //   return reason
-    // });
-    // debugger;
-    // return cards;
   }
 
   elementByTag(card, tag) {
