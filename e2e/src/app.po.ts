@@ -28,6 +28,7 @@ export class AppPage {
   // }
 
   lC() {
+    
     return element.all(by.css('.card')).count();
     // let cards = element.all(by.css('.card')).count().then((value) => {
     //   return value;

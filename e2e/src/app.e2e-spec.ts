@@ -13,16 +13,17 @@ describe('workspace-project App', () => {
     expect(page.getParagraphText()).toEqual('Create contact');
   });
 
-  it('fill in the form', async () => {
+  it('fill in the form', () => {
     page.navigateTo();
-    page.getField('name').sendKeys('John Doe');
+    debugger;
+    let name_field = page.getField('name')
+    name_field.sendKeys('John Doe');
     page.getField('email').sendKeys('john@craftacademy.se');
     page.getField('company').sendKeys('Craft Academy');
     page.getField('role').sendKeys('Tester');
     page.getField('twitter').sendKeys('@tester');
     page.getField('location').sendKeys('Gothenburg');
     page.getField('notes').sendKeys('Some tester guy');
-    debugger;
     let button = page.getSubmitButton()
     button.click();
       // .then((res) => {
@@ -32,7 +33,7 @@ describe('workspace-project App', () => {
       //   expect(page.elementByTag(card, 'h1')).toEqual('John Doe');
       // })
     let count = page.lC();
-    expect(count).toBe(3);
+    expect(count).toBe(4);
 
   });
   
